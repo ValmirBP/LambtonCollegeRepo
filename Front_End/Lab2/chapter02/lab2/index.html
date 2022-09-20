@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Favorite games">
+    <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+    <meta name="author" content="Valmir de Barros Pedro">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="../styles/base.css">
+    <link rel="stylesheet" href="../styles/home.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+
+    <script src="../Js/functions.js"></script>
+    <title>My favorite Games</title>
+</head>
+
+<body>
+    <header id="headerName">
+        <img src="../img/index/logo.png" alt="skull logo" class="logo">
+        <h2>
+            My favorite games
+        </h2>
+    </header>
+
+    <div class="content">
+        <div class="category">
+            <div onclick="goAction()" class="category-action">
+                <div class="button">
+                    <p> Action</p>
+                </div>
+            </div>
+
+
+            <div onclick="goArcade()" class="category-arcade">
+                <div class="button">
+                    <p> Arcade</p>
+                </div>
+            </div>
+
+            <div onclick="goFPS()" class="category-fps">
+                <div class="button">
+                    <p>FPS</p>
+                </div>
+            </div>
+
+            <div onclick="goFreeWorld()" class="category-freeWorld">
+                <div class="button">
+                    <p>Free World</p>
+                </div>
+            </div>
+
+            <div onclick="goRace()" class="category-race">
+                <div class="button">
+                    <p> Race </p>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>Developed by Valmir de Barros -
+                <script>
+                    showActualYear();
+                </script>
+            </p>
+
+        </footer>
+    </div>
+</body>
+
+</html>
