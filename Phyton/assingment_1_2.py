@@ -18,7 +18,7 @@ def gameMenu ():
     print("\n \033[92m 4 - exit \033[0m ",emojize(":door:"))
     return input("\n \033[92m Select the menu : (1,2,3, 4) : \033[0m")
 
-def menu_choice():
+def menuChoice():
     while True:
         choice = gameMenu()
         if choice == "1": 
@@ -48,9 +48,9 @@ def singlePlayer(): # Single player Gessing Game
         # guess = 1 testing
         counter += 1
         if guess < randNum :
-            print(" \033[91m Sorry try again, Something bigger this time \033[0m")
+            print(" \n \033[91m Sorry try again, Something bigger this time \033[0m")
         elif guess > randNum:
-            print("\033[91m Sorry try again, Something smaller this time \033[0m" )
+            print("\n \033[91m Sorry try again, Something smaller this time \033[0m" )
         else:
             print(" \033[1;32;40m CONGRATULATIONS!!! \033[m".ljust(40,emojize(":confetti_ball:")))
             print(f" \033[1;32;40m YOU WIN WITH {counter} TRIES \033[m")
@@ -72,30 +72,30 @@ def multiplayerAlt ():
     while rounds < 4 :
         rounds += 1 
         if turn == player1:
-            print(f"{player1} is our turn:")
+            print(f" \033[33m {player1} is our turn: \033[m")
             guess = int(input(" \033[92m Type a number: \033[0m"))
 
             if guess < randNum :
-                print("\033[91m Sorry try again, Something bigger this time \033[0m")
+                print("\n \033[91m Sorry try again, Something bigger this time \033[0m")
                 turn = player2
             elif guess > randNum:
-                print("\033[91m Sorry try again, Something smaller this time \033[0m" )
+                print("\n \033[91m Sorry try again, Something smaller this time \033[0m" )
                 turn = player2
             else:
                 counterPlay1 += 1
                 print(f"\033[1;32;40m CONGRATULATIONS!!! {player1} YOU  GOT IT. \033[m".ljust(40,emojize(":confetti_ball:")))
                 randNum = randint(1,2) 
                 turn = player2
-            
+
         else:
-            print(f"{player2} is our turn:")
+            print(f" \033[33m {player2} is our turn: \033[m \n ")
             guess = int(input(" \033[92m Type a number: \033[0m"))
 
             if guess < randNum :
-                print("\033[91m Sorry try again, Something bigger this time \033[0m")
+                print("\n \033[91m Sorry try again, Something bigger this time \033[0m")
                 turn = player1
             elif guess > randNum:
-                print("\033[91m Sorry try again, Something smaller this time \033[0m" )
+                print("\n \033[91m Sorry try again, Something smaller this time \033[0m" )
                 turn = player1
             else:
                 counterPlay2 += 1
@@ -104,10 +104,9 @@ def multiplayerAlt ():
                 turn = player1
 
     if counterPlay1 > counterPlay2:
-        print(f"win {player1}")
+        print(f"\n \033[92m THE WINNER IS {player1} \033[m")
     elif counterPlay1 > counterPlay2:
-        print(f"win {player2}")
+        print(f"\n \033[92m THE WINNER IS {player2} \033[m")
     else:
-        print(f"is a TIE")
+        print(" \033[91m IT IS A TIE!!! \033[m")
 
-multiplayerAlt()
