@@ -1,4 +1,5 @@
 from itertools import count
+from pickle import TRUE
 from random import randint
 from secrets import choice
 from emoji import emojize
@@ -87,51 +88,40 @@ def multiplayer2():
     playerLst = [player1,player2]
     randPlayer = choice(playerLst)
     turn = randPlayer
-    gameRound = 0
     player1Count = 0
     player2Count = 0
 
     def multiplayer():
         winner = 0
-        guess = int(input(" Type a number:"))
-        
-        if guess < randNum :
-            print(color.red, "\n Sorry try again, Something bigger this time \n", color.reset)
-        elif guess > randNum:
-            print(color.red,"\n Sorry try again, Something smaller this time \n", color.reset )
-        else:
-            winner += 1
-            print(color.cyan,f"\n CONGRATULATIONS!!! {randPlayer} YOU WIN!!!.",color.reset.ljust(7,emojize(":confetti_ball:")))
-        return winner
-        
-
-    while gameRound <= 4:
-        gameRound +=1
-
-        if turn == player1:
-            player1Count += 1
-            print(color.green,f"\n {player1} is our turn:\n", color.reset)
-            winner =  multiplayer()
-            if winner == 1:
-                break
-            turn = player2
-        else:
-            player2Count += 1
-            print(color.green, f"\n {player2} is our turn: \n ",color.reset)
-            winner = multiplayer()
-            if winner == 1:
-                break
-            turn = player1
+        gameRound = 0
+        while gameRound < 4:
+            gameRound +=1
+            guess = int(input(" Type a number:"))
             
-    if winner == 0:
-        if player1Count > player2Count:
-            print(color.cyan,f"\n CONGRATULATIONS!!! {player2} YOU WIN!!! WITH {player2Count} TRIES!!!.",color.reset.ljust(10,emojize(":confetti_ball:")))
-            print(color.cyan,f"\n {player1} HAD {player1Count} TRIES!!!.",color.reset.ljust(10,emojize(":confetti_ball:")))
-        elif player1Count < player2Count:
-            print(color.cyan,f"\n CONGRATULATIONS!!! {player1} YOU WIN!!! WITH {player1Count} TRIES!!!.",color.reset.ljust(10,emojize(":confetti_ball:")))
-            print(color.cyan,f"\n {player2} HAD {player2Count} TRIES!!!.",color.reset.ljust(10,emojize(":confetti_ball:")))
+            if guess < randNum :
+                print(color.red, "\n Sorry try again, Something bigger this time \n", color.reset)
+            elif guess > randNum:
+                print(color.red,"\n Sorry try again, Something smaller this time \n", color.reset )
+            else:
+                winner += 1
+                print(color.cyan,f"\n CONGRATULATIONS!!! {randPlayer} YOU WIN!!!.",color.reset.ljust(7,emojize(":confetti_ball:")))
+                randNum = randint(1,2) 
+        return winner, gameRound
+        
+
+    while True:
+        if turn == player1:
+            print(color.green,f"\n {player1} is our turn:\n", color.reset)
+            player1Count,gameRounds  = multiplayer()
+            if gameRounds <= 4:
+                turn =player2
         else:
-            print(color.cyan,f"\n IT IS A TIE!!!.",color.reset.ljust(10,emojize(":confetti_ball:")))
+            print(color.green,f"\n {player1} is our turn:\n", color.reset)
+            player2Count,gameRounds = multiplayer()
+            if gameRounds <= 4:
+                turn =player1
+            
+        
 
 def gameMenu():
     # HEADER
