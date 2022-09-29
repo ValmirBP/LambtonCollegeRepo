@@ -69,7 +69,8 @@ def multiplayerAlt ():
     turn = player1
     rounds = 0 
 
-    while rounds <= 10 :
+    while rounds < 4 :
+        rounds += 1 
         if turn == player1:
             print(f"{player1} is our turn:")
             guess = int(input(" \033[92m Type a number: \033[0m"))
@@ -82,18 +83,13 @@ def multiplayerAlt ():
                 turn = player2
             else:
                 counterPlay1 += 1
-                # if counterPlay1 < counterPlay2:
-                #     print(f" \033[1;32;40m CONGRATULATIONS!!! {player1}YOU  WIN!! \033[m".ljust(40,emojize(":confetti_ball:")))
-                #     print(f"player  1 tries {counterPlay1}")
-                #     print(f"player  2 tries {counterPlay2}")
-                # else:
-                #     print(f" \033[1;32;40m ITS A TIE!!! \033[m".ljust(40,emojize(":confetti_ball:")))
-                #     print(f"player  1 tries {counterPlay1}")
-                #     print(f"player  2 tries {counterPlay2}")
+                print(f"\033[1;32;40m CONGRATULATIONS!!! {player1} YOU  GOT IT. \033[m".ljust(40,emojize(":confetti_ball:")))
+                randNum = randint(1,2) 
+                turn = player2
+            
         else:
             print(f"{player2} is our turn:")
             guess = int(input(" \033[92m Type a number: \033[0m"))
-            counterPlay2 += 1
 
             if guess < randNum :
                 print("\033[91m Sorry try again, Something bigger this time \033[0m")
@@ -102,16 +98,16 @@ def multiplayerAlt ():
                 print("\033[91m Sorry try again, Something smaller this time \033[0m" )
                 turn = player1
             else:
-
                 counterPlay2 += 1
-                # if counterPlay2 < counterPlay1:
-                #     print(f"\033[1;32;40m CONGRATULATIONS!!! {player2} YOU  WIN!! \033[m".ljust(40,emojize(":confetti_ball:")))
-                #     print(f"player  1 tries {counterPlay1}")
-                #     print(f"player  2 tries {counterPlay2}")
-                # else:
-                #     print(f"\033[1;32;40m ITS A TIE!!! \033[m".ljust(40,emojize(":confetti_ball:")))
-                #     print(f"player  1 tries {counterPlay1}")
-                #     print(f"player  2 tries {counterPlay2}")
+                print(f"\033[1;32;40m CONGRATULATIONS!!! {player2} YOU  GOT IT. \033[m".ljust(40,emojize(":confetti_ball:")))
+                randNum = randint(1,2) 
+                turn = player1
 
+    if counterPlay1 > counterPlay2:
+        print(f"win {player1}")
+    elif counterPlay1 > counterPlay2:
+        print(f"win {player2}")
+    else:
+        print(f"is a TIE")
 
 multiplayerAlt()
