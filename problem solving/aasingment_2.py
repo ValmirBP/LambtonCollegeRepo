@@ -23,7 +23,7 @@ class color:
 # CommissionedEarned = SalesAmount * (CommissionRate/100)
 
 # ----------------------------------------------------------------------------------------------------------------------------------------
-def question1():
+def ass1Question1():
 
     print(color.lightCyan,"\n Question 1:".upper(),color.reset)
     print(color.lightCyan, "Prompt for and input a saleswoman’s sales for the month (in dollars) and her commission rate (as a percentage). Output her commission for that month. Note that you will need to convert the percentage to a decimal.", color.reset)
@@ -47,7 +47,7 @@ def question1():
 # Total = PricePerPound * (Pounds + Ounces/16)
 
 # ----------------------------------------------------------------------------------------------------------------------------------------
-def question2():
+def ass2Question2():
 
     print(color.lightCyan,"\n Question 2:".upper(),color.reset)
     print(color.cyan," \n The manager of the Super Supermarket would like to be able to compare the unit price for products sold there. To do this, the program should input the name and price of an item per pound and its weights in pounds and ounces. Then it should determine and display the unit price (the price per ounce) of that item and the total cost of the amount purchased.\n ", color.reset)
@@ -71,7 +71,7 @@ def question2():
 # To convert temperatures in degrees Celsius to Fahrenheit, multiply by 1.8 (or 9/5) and add 32.
 
 # ----------------------------------------------------------------------------------------------------------------------------------------
-def question3():
+def ass3Question3():
 
     print(color.lightCyan,"\n Question 3:".upper(),color.reset)
     print(color.cyan," \n A physicist is willing to develop a code fragment to read a temperature from user in centigrade and print out the temperature in Fahrenheit. To do this, the program should input the temperature in centigrade outputs the output in Fahrenheit degrees\n ", color.reset)
@@ -82,6 +82,6 @@ def question3():
     print(color.blue, f"The conversion from {CelsiusTemp}ºC to Fahrenheit is {FahrenheitTemp:.2f} ºF \n", color.reset)
 # ----------------------------------------------------------------------------------------------------------------------------------------
 
-question1()
-question2()
-question3()
+ass1Question1()
+ass2Question2()
+ass3Question3()
