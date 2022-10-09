@@ -1,0 +1,12 @@
+body{
+    background: lightgrey;
+}
+
+h1{
+    color: black;
+}
+
+h2{
+    color: aqua;
+    margin-left:50px ;
+}
