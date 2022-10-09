@@ -1,32 +1,29 @@
-body{
+body {
     position: relative;
     font-family: Arial, Helvetica, sans-serif;
 }
 
-hr{
-    border-top: 3px dashed gray;   
+hr {
+    border-top: 3px dashed gray;
 }
 
-h1,h2{
+h1,
+h2 {
     text-align: center;
     color: #000000;
 }
 
-h3{
-
-}
-
-ul.prof{
+ul.prof {
     display: block;
-    list-style-type: disclosure-open ;
+    list-style-type: disclosure-open;
 }
 
-ul .respons{
+ul .response {
     display: block;
     list-style-type: square;
 }
 
-footer{
+footer {
     padding: 20px;
     bottom: 0;
 }
