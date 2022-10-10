@@ -1,3 +1,6 @@
+from math import factorial
+
+
 class color:
         black = '\033[30m'
         red = '\033[31m'
@@ -48,10 +51,13 @@ def ass4Question1():
     count = 1
     calc = 1
 
-    while count <= nFActorial:
-        calc *= count
-        count += 1 
-    print(calc)
+    if factorial <= 0:
+        print(f" The result of factorial is 1")
+    else:
+        while count <= nFActorial:
+            calc *= count
+            count += 1
+        print(f" The result of factorial is{calc}")
 
 # ass4Question1()
 
@@ -83,7 +89,7 @@ def ass4Question2():
     while count < Time:
         count += 1
         Number = BacteriaPresent * 2**(count/10)
-        print(color.cyan,f" Day {count}: {Number:.2}", color.reset)
+        print(color.cyan,f" Day {count}: {Number:.2f}", color.reset)
 
 ass4Question2()
     
