@@ -59,7 +59,7 @@ def ass4Question1():
             count += 1
         print(f" The result of factorial is{calc}")
 
-# ass4Question1()
+ass4Question1()
 
 # ----------------------------------------------------------------------------------------------------------------------------------------
 # Question 2: programming  
