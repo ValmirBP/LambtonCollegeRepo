@@ -1,3 +1,5 @@
+from asyncore import read
+from fileinput import filename
 import os
 
 class color:
@@ -23,13 +25,12 @@ print("Create a python application that inputs, processes, and stores student da
 def menu():
     print(color.darkGrey, " MENU ".center(50,"-"), color.reset)
     print(color.blue,"1 - Create a new  file")
-    print(" 2 - Add information's to a new file")
-    print(" 3 - add information's to a existing file")
-    print(" 4 - view file")
-    print(" 5 - Delete file")
-    print(" 6 - exit",color.reset)
+    print(" 2 - add information's to a existing file")
+    print(" 3 - view file")
+    print(" 4 - Delete file")
+    print(" 5 - exit",color.reset)
     print(color.darkGrey, "-"*50, color.reset)
-    print (color.yellow,'Enter 1, 2, 3, 4, 5 or 6: ',color.reset, end="")
+    print (color.yellow,'Enter 1, 2, 3, 4, or 5: ',color.reset, end="")
     return input ()
 
 def createNewFile():
@@ -49,17 +50,17 @@ def createNewFile():
                 stdGpaNumber = input("Type the GPA: ").strip().capitalize()
                 stdDateBirth = input("Type the Date of Birth: ").strip().capitalize()
                 spaceEntrances =  ("-" * 30)
-                aFile.writelines(["StudentID: " + stdId + "\n","First Name: " + stdFName +"\n","Last Name: "+ stdLName + "\n","Major: " + stdMajor + "\n","Phone Number: " + stdPNumber + "\n","GPA: " + stdGpaNumber + "\n","Date of Birth: " + stdDateBirth + "\n",spaceEntrances + "\n"])
+                aFile.writelines(["StudentID: " + stdId + "\n","First Name: " + stdFName + "\n","Last Name: "+ stdLName + "\n","Major: " + stdMajor + "\n","Phone Number: " + stdPNumber + "\n","GPA: " + stdGpaNumber + "\n","Date of Birth: " + stdDateBirth + "\n",spaceEntrances + "\n"])
                 add = input("Do you  want to add other? [Y/N]: ").upper()
             aFile.close()
         except OSError:
             print(OSError)
     else:
-        print(color.red,f"\nThe file {fileName} already exists, if you want to add something use the menu 2\n", color.reset)
+        print(color.red,f"\n The file {fileName} already exists, if you want to add something use the menu 2\n", color.reset)
 
-def AddInformationExistFile():
+def addInformationExistFile():
 
-    print(color.green, "Type here the name of the file: ", color.reset, end="")
+    print(color.green, " Type here the name of the file: ", color.reset, end="")
     fileName = input() + ".txt" .strip()
     add = "Y"
 
@@ -80,11 +81,21 @@ def AddInformationExistFile():
 
     except OSError:
         print(OSError)
-
-
-
+        
 def viewFile():
-    pass
+    print(color.green,"Type here the name of the file, You want to view: ", color.reset, end="")
+    fileName = input() + ".txt" .strip()
+
+    if not os.path.exists(fileName):
+        print(color.red,f"The document {fileName}, do not exist in this folder",color.reset)
+    else:
+        print(color.yellow,"Document: \n",color.reset)
+        aFile = open(fileName,'r')
+        out = aFile.readlines()
+        for lines in out:
+            print(lines.strip("\n"))
+        aFile.close()
+
 
 def deleteFile():
     pass
@@ -95,24 +106,28 @@ def main():
         choice = menu()
 
         if choice == '1':
-            print(color.green, "\nYou  choose create a new  file",color.reset)
+            print(color.green, "\n You  choose create a new  file",color.reset)
             createNewFile()
 
         elif choice == '2':
-            print(color.green, "\nYou  choose Add information's to a new file",color.reset)
+            print(color.green, "\n You  choose add information's to a existing file",color.reset)
+            addInformationExistFile()
+
         elif choice == '3':
-            print(color.green, "\nYou  choose add information's to a existing file",color.reset)
+            print(color.green, "\n You  choose view file",color.reset)
+            viewFile()
+
         elif choice == '4':
-            print(color.green, "\nYou  choose view file",color.reset)
+            print(color.green, "\n You  choose Delete file",color.reset)
+
         elif choice == '5':
-            print(color.green, "\nYou  choose Delete file",color.reset)
-        elif choice == '6':
-            print(color.orange, "\nYou  choose exit")
+            print(color.orange, "\n You  choose exit")
             print("Thanks to use my software\n",color.reset)
             break
+
         else:
             print(color.red,"\n BAD INPUT")
             print(" Please try again\n",color.reset)
 
 
-
+main()

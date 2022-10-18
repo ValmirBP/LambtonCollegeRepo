@@ -1,0 +1,16 @@
+StudentID: C0808675
+First Name: Valmir
+Last Name: Pedro
+Major: It
+Phone Number: 647 123 45 56
+GPA: 2.8
+Date of Birth: 06/26/1994
+------------------------------
+StudentID: 1
+First Name: 2
+Last Name: 3
+Major: 4
+Phone Number: 5
+GPA: 6
+Date of Birth: 1
+------------------------------
