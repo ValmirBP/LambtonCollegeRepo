@@ -1,5 +1,6 @@
 from asyncore import read
 from fileinput import filename
+from gettext import find
 import os
 
 class color:
@@ -51,7 +52,20 @@ def createNewFile():
                 stdDateBirth = input("Type the Date of Birth: ").strip().capitalize()
                 spaceEntrances =  ("-" * 30)
                 aFile.writelines(["StudentID: " + stdId + "\n","First Name: " + stdFName + "\n","Last Name: "+ stdLName + "\n","Major: " + stdMajor + "\n","Phone Number: " + stdPNumber + "\n","GPA: " + stdGpaNumber + "\n","Date of Birth: " + stdDateBirth + "\n",spaceEntrances + "\n"])
-                add = input("Do you  want to add other? [Y/N]: ").upper()
+                ask = ''
+
+                while ask == "":
+                    ask = input("Do you  want to add other? [Y/N]: ").upper().strip()
+                    if ask == 'Y':
+                        add = 'Y'
+                        break
+                    elif ask == 'N':
+                        add = 'N'
+                        break
+                    else: 
+                        ask = ''
+                        print(color.red,"BAD INPUT",color.reset)
+
             aFile.close()
         except OSError:
             print(OSError)
@@ -59,13 +73,13 @@ def createNewFile():
         print(color.red,f"\n The file {fileName} already exists, if you want to add something use the menu 2\n", color.reset)
 
 def addInformationExistFile():
-
     print(color.green, " Type here the name of the file: ", color.reset, end="")
     fileName = input() + ".txt" .strip()
     add = "Y"
 
     try:
         aFile = open(fileName,'a')
+
         while add == "Y":
             stdId = input("Type the Student ID: ").strip().capitalize()
             stdFName = input("Type the First Name: ").strip().capitalize()
@@ -76,7 +90,19 @@ def addInformationExistFile():
             stdDateBirth = input("Type the Date of Birth: ").strip().capitalize()
             spaceEntrances =  ("-" * 30)
             aFile.writelines(["StudentID: " + stdId + "\n","First Name: " + stdFName +"\n","Last Name: "+ stdLName + "\n","Major: " + stdMajor + "\n","Phone Number: " + stdPNumber + "\n","GPA: " + stdGpaNumber + "\n","Date of Birth: " + stdDateBirth + "\n",spaceEntrances + "\n"])
-            add = input("Do you  want to add other? [Y/N]: ").upper()
+            ask = ''
+
+            while ask == "":
+                ask = input("Do you  want to add other? [Y/N]: ").upper().strip()
+                if ask == 'Y':
+                    add = 'Y'
+                    break
+                elif ask == 'N':
+                    add = 'N'
+                    break
+                else: 
+                    ask = ''
+                    print(color.red,"BAD INPUT",color.reset)
         aFile.close()
 
     except OSError:
@@ -96,10 +122,29 @@ def viewFile():
             print(lines.strip("\n"))
         aFile.close()
 
+def findOnFile():
+    print(color.green,"Type here the name of the file, You want to view: ", color.reset, end="")
+    fileName = input() + ".txt" .strip()
 
-def deleteFile():
-    pass
+    if not os.path.exists(fileName):
+        print(color.red,f"The document {fileName}, do not exist in this folder",color.reset)
+    else:
+        print(color.green,"Type here the nStudent id that you  looking for : ", color.reset, end="")
+        stdIdFind = "StudentID: " + input().strip()
+        print(color.yellow,"Document: \n",color.reset)
 
+        aFile = open(fileName,'r')
+        out = aFile.readlines()
+        for lines in out:
+            if lines.find(stdIdFind) != -1:
+                idxFind = out.index(lines)
+                print(f"Line Number: {idxFind}")
+                
+                for idxFind in out:
+                    print(idxFind.strip("\n"))
+        aFile.close()
+
+findOnFile()
 
 def main():
     while True:
@@ -128,6 +173,3 @@ def main():
         else:
             print(color.red,"\n BAD INPUT")
             print(" Please try again\n",color.reset)
-
-
-main()
