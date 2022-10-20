@@ -14,3 +14,11 @@ Phone Number: 5
 GPA: 6
 Date of Birth: 1
 ------------------------------
+StudentID: 5
+First Name: 2
+Last Name: 3
+Major: 4
+Phone Number: 5
+GPA: 6
+Date of Birth: 1
+------------------------------

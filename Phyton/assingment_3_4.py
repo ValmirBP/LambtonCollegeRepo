@@ -131,20 +131,32 @@ def findOnFile():
     else:
         print(color.green,"Type here the nStudent id that you  looking for : ", color.reset, end="")
         stdIdFind = "StudentID: " + input().strip()
+
         print(color.yellow,"Document: \n",color.reset)
 
-        aFile = open(fileName,'r')
-        out = aFile.readlines()
-        for lines in out:
-            if lines.find(stdIdFind) != -1:
-                idxFind = out.index(lines)
-                print(f"Line Number: {idxFind}")
-                
-                for idxFind in out:
-                    print(idxFind.strip("\n"))
+        # aFile = open(fileName,'r')
+        # out = aFile.readline()
+
+    with open(fileName,'r') as aFile :
+        read = aFile.readlines()
+        for line in read:
+            if line.find(stdIdFind) != -1:
+                print(read.index(line))
+                findIdxLine = read.index(line)
         aFile.close()
 
+    with open(fileName,'r') as aFile :
+        for line in range(findIdxLine,(findIdxLine+8)):
+         aFile.readline()
+        for line in aFile:
+            print("line: {}".format( line.strip()))
+    aFile.close()
+
+
+   
+
 findOnFile()
+
 
 def main():
     while True:
