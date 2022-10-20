@@ -1,8 +1,0 @@
-date
-downland
-
-user 
-
-date data1 date2
-201102 foo bar 200 50
-201101 foo bar 300 35

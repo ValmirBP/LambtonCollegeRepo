@@ -26,10 +26,10 @@ print("Create a python application that inputs, processes, and stores student da
 def menu():
     print(color.darkGrey, " MENU ".center(50,"-"), color.reset)
     print(color.blue,"1 - Create a new  file")
-    print(" 2 - add information's to a existing file")
-    print(" 3 - view file")
-    print(" 4 - Delete file")
-    print(" 5 - exit",color.reset)
+    print(" 2 - Add information's to a existing file")
+    print(" 3 - View file")
+    print(" 4 - Find on file")
+    print(" 5 - Exit",color.reset)
     print(color.darkGrey, "-"*50, color.reset)
     print (color.yellow,'Enter 1, 2, 3, 4, or 5: ',color.reset, end="")
     return input ()
@@ -123,40 +123,29 @@ def viewFile():
         aFile.close()
 
 def findOnFile():
-    print(color.green,"Type here the name of the file, You want to view: ", color.reset, end="")
-    fileName = input() + ".txt" .strip()
+        print(color.green,"Type here the name of the file, You want to view: ", color.reset, end="")
+        fileName = input() + ".txt" .strip()
 
-    if not os.path.exists(fileName):
-        print(color.red,f"The document {fileName}, do not exist in this folder",color.reset)
-    else:
-        print(color.green,"Type here the nStudent id that you  looking for : ", color.reset, end="")
-        stdIdFind = "StudentID: " + input().strip()
+        if not os.path.exists(fileName):
+            print(color.red,f"The document {fileName}, do not exist in this folder",color.reset)
+            
+        else:    
+            print(color.green,"Type here the nStudent id that you  looking for : ", color.reset, end="")
+            stdIdFind = "StudentID: " + input().strip()
+            print(color.yellow,"\n Document: \n",color.reset)
 
-        print(color.yellow,"Document: \n",color.reset)
+            with open(fileName,'r') as aFile :
+                read = aFile.readlines()
 
-        # aFile = open(fileName,'r')
-        # out = aFile.readline()
+                for line in read:
+                    if line.find(stdIdFind) != -1:
+                        findIdxLine = read.index(line)
 
-    with open(fileName,'r') as aFile :
-        read = aFile.readlines()
-        for line in read:
-            if line.find(stdIdFind) != -1:
-                print(read.index(line))
-                findIdxLine = read.index(line)
-        aFile.close()
+                for i in range(findIdxLine,(findIdxLine+7)):
+                    print(color.cyan,read[i].strip("\n"), color.reset)
+            aFile.close()
 
-    with open(fileName,'r') as aFile :
-        for line in range(findIdxLine,(findIdxLine+8)):
-         aFile.readline()
-        for line in aFile:
-            print("line: {}".format( line.strip()))
-    aFile.close()
-
-
-   
-
-findOnFile()
-
+findOnFile()        
 
 def main():
     while True:
@@ -175,7 +164,7 @@ def main():
             viewFile()
 
         elif choice == '4':
-            print(color.green, "\n You  choose Delete file",color.reset)
+            print(color.green, "\n You  choose find on file",color.reset)
 
         elif choice == '5':
             print(color.orange, "\n You  choose exit")
