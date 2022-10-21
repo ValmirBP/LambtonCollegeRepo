@@ -1,4 +1,5 @@
 from asyncore import read
+from datetime import date
 from fileinput import filename
 from gettext import find
 import os
@@ -34,6 +35,16 @@ def menu():
     print (color.yellow,'Enter 1, 2, 3, 4, or 5: ',color.reset, end="")
     return input ()
 
+def formatPhoneNumber():
+    while True:
+        phone=input("Type the Phone Number:")
+        if len(phone) <= 10:
+            phoneFormatted = ( phone[0:3] + "-" +  phone[3:6] + "-" + phone[6:10])
+            break
+        else:
+            print("phone is bigger than 10 chars please check the number")
+    return phoneFormatted
+
 def createNewFile():
     
     print(color.green, "Type here the name of the file: ", color.reset, end="")
@@ -47,9 +58,9 @@ def createNewFile():
                 stdFName = input("Type the First Name: ").strip().capitalize()
                 stdLName = input("Type the Last Name: ").strip().capitalize()
                 stdMajor = input("Type the major: ").strip().capitalize()
-                stdPNumber = input("Type the Phone Number: ").strip().capitalize()
+                stdPNumber = formatPhoneNumber()
                 stdGpaNumber = input("Type the GPA: ").strip().capitalize()
-                stdDateBirth = input("Type the Date of Birth: ").strip().capitalize()
+                stdDateBirth = input('Type the Date of Birth (month,day,year):')
                 spaceEntrances =  ("-" * 30)
                 aFile.writelines(["StudentID: " + stdId + "\n","First Name: " + stdFName + "\n","Last Name: "+ stdLName + "\n","Major: " + stdMajor + "\n","Phone Number: " + stdPNumber + "\n","GPA: " + stdGpaNumber + "\n","Date of Birth: " + stdDateBirth + "\n",spaceEntrances + "\n"])
                 ask = ''
@@ -128,7 +139,7 @@ def findOnFile():
 
         if not os.path.exists(fileName):
             print(color.red,f"The document {fileName}, do not exist in this folder",color.reset)
-            
+
         else:    
             print(color.green,"Type here the nStudent id that you  looking for : ", color.reset, end="")
             stdIdFind = "StudentID: " + input().strip()
@@ -144,8 +155,6 @@ def findOnFile():
                 for i in range(findIdxLine,(findIdxLine+7)):
                     print(color.cyan,read[i].strip("\n"), color.reset)
             aFile.close()
-
-findOnFile()        
 
 def main():
     while True:
@@ -165,6 +174,7 @@ def main():
 
         elif choice == '4':
             print(color.green, "\n You  choose find on file",color.reset)
+            findOnFile()
 
         elif choice == '5':
             print(color.orange, "\n You  choose exit")
@@ -174,3 +184,5 @@ def main():
         else:
             print(color.red,"\n BAD INPUT")
             print(" Please try again\n",color.reset)
+
+main()

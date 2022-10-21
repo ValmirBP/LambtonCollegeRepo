@@ -1,0 +1,8 @@
+StudentID: 1
+First Name: 2
+Last Name: 3
+Major: 4
+Phone Number: 5--
+GPA: 5
+Date of Birth: 32154
+------------------------------
