@@ -45,6 +45,48 @@ def formatPhoneNumber():
             print("phone is bigger than 10 chars please check the number")
     return phoneFormatted
 
+
+def ordinal():
+    n=int(input("Enter a day DD : "))
+    s = ('th', 'st', 'nd', 'rd') + ('th',)*10
+    v = n%100
+    if v > 13:
+        n1 = f'{n}{s[v%10]}'
+        return n1
+    else:
+        n2 =  f'{n}{s[v]}'
+        return n2
+
+
+def formatDate():
+    while True:
+        try:
+            year = int(input('Enter a year YYYY: '))
+            month = input('Enter a month MM : ')
+            day = ordinal()
+            months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+
+            if month == '01':
+                monthNumber = 0
+                month = months[monthNumber]
+                break
+
+            elif month[0] == '0':
+                monthNumber = int(month[1])-1
+                month = months[monthNumber]
+                break
+
+            else:
+                month = int(month)-1
+                month = months[month]
+                break
+        except:
+            print("Bad input, month mus be between 01 - 12")
+    d = [month, day +"", year]
+    print(d)
+    return d
+
+
 def createNewFile():
     
     print(color.green, "Type here the name of the file: ", color.reset, end="")
