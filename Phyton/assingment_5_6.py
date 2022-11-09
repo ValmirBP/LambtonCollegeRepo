@@ -1,42 +1,60 @@
 '''
-Student: Valmir de Barros Pedro
-Id: C0868075
-CSD 1233 Python programming 
+Planing the class
 
-planing the class
-object: CAR
-
-1) Brand : 
-2) Model : 
-3) Color : 
-4) Motorization : 
-5) Horse Power :
-6) acceleration 0 To 100 :
-7) Autonomy :
-8) price :
+Class: Student
+Para: 
+    fist Name (pub)
+    last name (pub)
+    course enrolled (pub)
+    assignment1 (Priv)
+    assignment2 (Priv)
+    test (Priv)
+func:
+    average (Priv)
+    approved (Priv)
 
 '''
 
-'''
-Creating class where  color and model is not  private.
-'''
-class Car:
-    def __init__(self, brand, model, color, motorization, horsePower, accel0To100, autonomy, price):
-        self.__brand = brand
-        self.model = model
-        self.color = color
-        self.__motorization = motorization
-        self.__horsePower = horsePower
-        self.__accel0To100 = accel0To100
-        self.__autonomy = autonomy
-        self.__price = price
+class Student:
+    
+    def __init__(self, fName, lName, courseEnroll,assignment1 ,assignment2,test):
+
+        self.fName = fName
+        self.lName = lName
+        self.courseEnroll = courseEnroll
+        self.__assignment1 = float(assignment1)
+        self.__assignment2 = float(assignment2)
+        self.__test = float(test)
+
+
+    def average(self):
+        return (self.__assignment1 + self.__assignment2 + self.__test)/3
+
+    def approved(self):
+        avg = self.average()
+        if avg >= 5:
+            return 'approved'
+        else:
+            return 'reproved'
+
+
 
     def __str__(self):
-        return f' The chosen car is from Brand: {self.__brand}\n Model: {self.model}\n the color is {self.color}\n Motorization: {self.__motorization}\n the horse power is {self.__horsePower} HP\n Acceleration: {self.__accel0To100} sec., with autonomy of {self.__autonomy} KM \n Total $ {self.__price}'
+        return f'Name: {self.fName} {self.lName}\n Course: {self.courseEnroll}\n Grades\n Assignment 1: {self.__assignment1}\n Assignment 2: {self.__assignment2}\n Test: {self.__test}\n So the average of the grades is {self.average()}\n this student is {self.approved()} '
         
+# print('--------')
+# student1 = Student('Valmir','Pedro','FSD',10,1.5,3.5)
+# print (student1)
+# print('--------')
 
 
-car1 = Car('Lucid','Lucid Air','Black','Electric',1200,3.8,830,121500)
-car2 = Car('Tesla','Model3','White','Electric',480,6.7,438,60000)
-car3 = Car('Ford','Mustang Mach 1','Gray','Combustion',470,6.8,17.1,74000)
+for i in range (2):
+    FirstName = input("Enter the fist name: ")
+    LastName  = input("Enter the last name: ")
+    Course    = input("Enter the course name: ")
+    gradeAss1 = input("Enter the fist Assignment grade: ")
+    gradeAss2 = input("Enter the second Assignment grade: ")
+    gradeTest = input("Enter the test grade: ")
+    student = Student(FirstName,LastName,Course,gradeAss1,gradeAss2,gradeTest)
+    print(student)
 
