@@ -1,4 +1,8 @@
 '''
+Student: Valmir de Barros Pedro
+Student Number: C0808675
+Course: 2022F CSD 1233 Python Programming
+
 Planing the class
 
 Class: Student
@@ -17,7 +21,6 @@ func:
 
 
 class Student:
-
     def __init__(self, fName, lName, courseEnroll, assignment1, assignment2, test):
 
         self.fName = fName
@@ -51,8 +54,7 @@ for i in range(4):
     gradeAss1 = input("Enter the fist Assignment grade: ").strip()
     gradeAss2 = input("Enter the second Assignment grade: ").strip()
     gradeTest = input("Enter the test grade: ")
-    objStudent = Student(FirstName, LastName, Course,
-                         gradeAss1, gradeAss2, gradeTest)
+    objStudent = Student(FirstName, LastName, Course,gradeAss1, gradeAss2, gradeTest)
     students.append(objStudent)
 
 
