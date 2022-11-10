@@ -2,7 +2,7 @@
 Planing the class
 
 Class: Student
-Para: 
+Para:
     fist Name (pub)
     last name (pub)
     course enrolled (pub)
@@ -15,9 +15,10 @@ func:
 
 '''
 
+
 class Student:
-    
-    def __init__(self, fName, lName, courseEnroll,assignment1 ,assignment2,test):
+
+    def __init__(self, fName, lName, courseEnroll, assignment1, assignment2, test):
 
         self.fName = fName
         self.lName = lName
@@ -25,7 +26,6 @@ class Student:
         self.__assignment1 = float(assignment1)
         self.__assignment2 = float(assignment2)
         self.__test = float(test)
-
 
     def average(self):
         return (self.__assignment1 + self.__assignment2 + self.__test)/3
@@ -37,24 +37,26 @@ class Student:
         else:
             return 'reproved'
 
-
-
     def __str__(self):
         return f'Name: {self.fName} {self.lName}\n Course: {self.courseEnroll}\n Grades\n Assignment 1: {self.__assignment1}\n Assignment 2: {self.__assignment2}\n Test: {self.__test}\n So the average of the grades is {self.average()}\n this student is {self.approved()} '
-        
-# print('--------')
-# student1 = Student('Valmir','Pedro','FSD',10,1.5,3.5)
-# print (student1)
-# print('--------')
 
 
-for i in range (2):
-    FirstName = input("Enter the fist name: ")
-    LastName  = input("Enter the last name: ")
-    Course    = input("Enter the course name: ")
-    gradeAss1 = input("Enter the fist Assignment grade: ")
-    gradeAss2 = input("Enter the second Assignment grade: ")
+students = []
+for i in range(4):
+
+    print('---------')
+    FirstName = input("Enter the fist name: ").capitalize().strip()
+    LastName = input("Enter the last name: ").capitalize().strip()
+    Course = input("Enter the course name: ").upper().strip()
+    gradeAss1 = input("Enter the fist Assignment grade: ").strip()
+    gradeAss2 = input("Enter the second Assignment grade: ").strip()
     gradeTest = input("Enter the test grade: ")
-    student = Student(FirstName,LastName,Course,gradeAss1,gradeAss2,gradeTest)
-    print(student)
+    objStudent = Student(FirstName, LastName, Course,
+                         gradeAss1, gradeAss2, gradeTest)
+    students.append(objStudent)
 
+
+for student in students:
+    print('---------')
+    print(student)
+    print('---------')
