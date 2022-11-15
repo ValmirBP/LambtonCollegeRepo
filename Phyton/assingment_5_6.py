@@ -45,7 +45,7 @@ class Student:
 
 
 students = []
-for i in range(4):
+for i in range(2):
 
     print('---------')
     FirstName = input("Enter the fist name: ").capitalize().strip()
@@ -54,11 +54,11 @@ for i in range(4):
     gradeAss1 = input("Enter the fist Assignment grade: ").strip()
     gradeAss2 = input("Enter the second Assignment grade: ").strip()
     gradeTest = input("Enter the test grade: ")
-    objStudent = Student(FirstName, LastName, Course,gradeAss1, gradeAss2, gradeTest)
+    objStudent = Student(FirstName, LastName, Course,
+                         gradeAss1, gradeAss2, gradeTest)
     students.append(objStudent)
 
 
 for student in students:
     print('---------')
     print(student)
-    print('---------')
