@@ -40,15 +40,18 @@ print (aList)
 print ('\n')
 
 # 3) Delete the 7th index of the list.
-aList.pop(7)
 print (color.red, '3)',color.green,'deleting 7th index overjoyed',color.reset)
+print(color.green,"BEFORE:",color.reset)
+print(aList)
+aList.pop(7)
+print(color.red,"AFTER:",color.reset)
 print (aList)
 print ('\n')
 
 # 4) Delete the entry “valuable”
 def removePop():
     aList = ["head" ,"heartbreaking" ,"mark" ,"aboriginal" ,"activity" ,"valuable" ,"overjoyed" ,"abandoned" ,"snail" ,"tip"]
-    aList.pop(6)
+    aList.pop(5)
     print (color.red, '4)',color.green,'deleting valuable Using pop()',color.reset)
     print (aList)
     print ('\n')
@@ -65,6 +68,7 @@ removeRemoveFunc()
 # 5) Search for the value “boo”. Delete it if found
 def findBooFalse():
     print (color.red, '5)',color.green,'searching boo in list False',color.reset)
+    print(aList)
     if "boo" in aList:
         aList.remove('boo')
         print("boo found and removed")
@@ -77,9 +81,9 @@ findBooFalse()
 
 def findBooTrue():
     aList = ["head" ,"heartbreaking" ,"mark" ,"aboriginal" ,"activity","boo" ,"valuable" ,"overjoyed" ,"abandoned" ,"snail" ,"tip"]
-    print(aList)
     print ('\n')
     print (color.red, '5)',color.green,'searching boo in list True:\n',color.reset)
+    print(aList)
     if "boo" in aList:
         print(color.green,"boo found at" ,aList.index('boo') ,"position of the list and removed",color.reset)
         aList.remove('boo')
@@ -94,10 +98,10 @@ findBooTrue()
 # 6) Add any value after the item “activity”
 def  addWithNoLoop():
     aList = ["head","heartbreaking" ,"mark" ,"aboriginal" ,"activity" ,"valuable" ,"overjoyed" ,"abandoned" ,"snail" ,"tip"]
-    print(color.red,"6)",color.green,"adding a C0868075 after activity",color.reset)
+    print(color.red,"6)",color.green,"adding a C0868075 after activity coded",color.reset)
     print(color.green,"BEFORE:",color.reset)
     print(aList)
-    aList.insert(6,"C0868075")
+    aList.insert(5,"C0868075")
     print(color.red,"AFTER:",color.reset)
     print(aList)
     print ('\n')
@@ -106,7 +110,7 @@ addWithNoLoop()
 
 def addWithLoop():
     aList = ["head","heartbreaking" ,"mark" ,"aboriginal" ,"activity" ,"valuable" ,"overjoyed" ,"abandoned" ,"snail" ,"tip"]
-    print(color.red,"6)",color.green,"adding a C0868075 after activity",color.reset)
+    print(color.red,"6)",color.green,"adding a C0868075 after activity using loop",color.reset)
     print(color.green,"BEFORE:",color.reset)
     print(aList)
 
@@ -122,8 +126,10 @@ addWithLoop()
 
 # 7) Output every other value of the list starting with index 1 using a loop
 aList = ["head","heartbreaking" ,"mark" ,"aboriginal" ,"activity" ,"valuable" ,"overjoyed" ,"abandoned" ,"snail" ,"tip"]
+print(color.red,"7)",color.green,"Printing the array stating with index 1 it takes out the head ",color.reset)
 for index in range(1, len(aList)):
-    print(aList[index])
+    print(aList[index],end=", ")
+print ('\n')
 
 # -----------------------------------------------------
 
