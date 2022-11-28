@@ -1,0 +1,6 @@
+Valmir,1,0
+Valmir,2,1
+Valmir,3,43
+Valmir,4,5
+Valmir,5,3
+Valmir,6,2
