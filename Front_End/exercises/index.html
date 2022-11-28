@@ -1,0 +1,221 @@
+<!DOCTYPE html5>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form webpage</title>
+<!-- 
+    Student Valmir de Barros Pedro
+    Student Number C0868075
+    -->
+<style>      
+      body {
+        width: auto;
+      }
+
+      #stdName{
+        width: 100%;
+        text-align: center;
+        padding-top: 2%;
+    }
+    #stdNumber{
+            width: 100%;
+            text-align: center;
+        }
+        
+      form {
+        margin-right: auto;
+        margin-left: auto;
+        border: 3px solid #000000;
+        padding: 2rem;
+      }
+
+
+      
+      span.strip {
+        color: #ff0000;
+      }
+
+      .formLbl label {
+        display: inline-block;
+        width: 157px;
+        margin-top: 0.25rem;
+        margin-bottom: 0.20rem;
+      }
+    
+
+      
+      #bBackGrdLb {
+        position: relative;
+        bottom: 55px;
+      }
+      
+      textarea {
+        display: inline-block;
+        margin-top: 0.20rem;
+        margin-bottom: 0.20rem;
+      }
+
+      #bthDate,
+      #monthOpt,
+      #yBtrDate {
+        width: 55px;
+      }
+
+      .chkBox {
+        text-align: center;
+        display: block;
+      }
+
+      .formCenter {
+        display: grid;
+        height: 100vh;
+        place-items: center;
+      }
+
+      .buttons {
+        text-align: center;
+      }
+
+    </style>
+  </head>
+  <body>
+
+    <h2 id = "stdName">Student: Valmir de Barros Pedro </h2>
+    <h2 id = "stdNumber">Student Number: C0868075 </h2>
+    <div class="formCenter">
+
+      <form action="#" class="formLbl">
+        <span class="strip">
+          <strong>* Mandatory to Fill</strong>
+        </span> 
+        <br />
+
+        <label for="fName">
+          <strong>First name: </strong>
+        </label>
+
+        <input type="text" name="fName" id="fName" required/> 
+
+        <span class="strip">*</span> 
+        <br />
+
+        <label for="lName">
+          <strong>Last name: </strong>
+        </label>
+
+        <input type="text" name="lName" id="lName" /> 
+        <br />
+
+        <label for="bthDate">
+          <strong>Birth Date: </strong>
+        </label>
+
+        <input type="text" name="bthDate" id="bthDate" placeholder="Day" />
+
+        <select>
+
+          <option value="Month" id="monthOpt" selected disabled>
+            Month
+          </option>
+          <option value="January">
+            January
+          </option>
+
+          <option value="February">
+            February
+          </option>
+          <option value="March">
+            March
+          </option>
+          <option value="April">
+            April
+          </option>
+          <option value="May">
+            May
+          </option>
+          <option value="June">
+            June
+          </option>
+          <option value="July">
+            July
+          </option>
+          <option value="August">
+            August
+          </option>
+          <option value="September">
+            September
+          </option>
+          <option value="October">
+            October
+          </option>
+          <option value="November">
+            November
+          </option>
+          <option value="December">
+            December
+          </option>
+        </select>
+
+        <input type="text" placeholder="Year" id="yBtrDate" /> 
+        <br />
+
+        <label for="uName">
+            <strong>Username: </strong>
+        </label>
+
+        <input type="text" name="uName" id="uName" required/> <span class="strip">*</span> 
+        <br />
+
+        <label for="mail">
+          <strong>E-mail: </strong>
+        </label>
+
+        <input type="text" name="mail" id="mail" /> 
+        <br />
+
+        <label for="psw">
+          <strong>Password: </strong>
+        </label>
+
+        <input type="password" name="psw" id="psw" required/> 
+        <span class="strip">*</span> 
+
+        <br />
+
+        <label for="pswReEnter">
+          <strong>Re-Password: </strong>
+        </label>
+
+        <input type="password" name="pswReEnter" id="pswReEnter" required/> 
+        <span class="strip">*</span> 
+        <br />
+
+        <label for="bBackGrd" id="bBackGrdLb">
+          <strong>Brief Background: </strong>
+        </label>
+
+        <textarea name="bBackGrd" id="bBackGrd" cols="30" rows="4"></textarea> 
+        <br />
+
+        <div class="chkBox">
+          <input type="checkbox" id="chkBox" /> I agree to the terms &amp; conditions. 
+          <br />
+          <br />
+        </div>
+
+        <div class="buttons">
+          <button type="submit">Submit</button>
+          <button type="reset">Clear</button>
+          <button type="button">Cancel</button>
+        </div>
+
+        <br />
+
+      </form>
+
+    </div>
+
+  </body>
+
+</html>
