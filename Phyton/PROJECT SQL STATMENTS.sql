@@ -416,3 +416,29 @@ VALUES (9, 10, 9, 7, 9, 1, '94711773', 34.99, null, 34.99, 1, 1, 10);
 
 INSERT INTO `term_project`.`item` (`item_id`, `product_id`, `brand _id`, `supplier _id`, `order _id`, `employee_id`, `sku`, `max_price_rentail`, `discount`, `price`, `quantity`, `qnty_sold`, `available`) 
 VALUES (10, 2, 2, 3, 10, 1, '58068118', 20, null, 20, 1, 1, 50);
+
+-- end
+
+INSERT INTO `term_project`.`order_item` (`id`, `product_id`, `item_id`, `order_id`) 
+VALUES (3, 5, 3, 3);
+
+INSERT INTO `term_project`.`order_item` (`id`, `product_id`, `item_id`, `order_id`) 
+VALUES (4, 2, 4, 4);
+
+INSERT INTO `term_project`.`order_item` (`id`, `product_id`, `item_id`, `order_id`) 
+VALUES (5, 13, 5, 4);
+
+INSERT INTO `term_project`.`order_item` (`id`, `product_id`, `item_id`, `order_id`) 
+VALUES (6, 13, 6, 5);
+
+INSERT INTO `term_project`.`order_item` (`id`, `product_id`, `item_id`, `order_id`) 
+VALUES (7, 15, 7, 7);
+
+INSERT INTO `term_project`.`order_item` (`id`, `product_id`, `item_id`, `order_id`) 
+VALUES (8, 7, 8, 8);
+
+INSERT INTO `term_project`.`order_item` (`id`, `product_id`, `item_id`, `order_id`) 
+VALUES (9, 10, 9, 9);
+
+INSERT INTO `term_project`.`order_item` (`id`, `product_id`, `item_id`, `order_id`) 
+VALUES (10, 2, 10, 10);
