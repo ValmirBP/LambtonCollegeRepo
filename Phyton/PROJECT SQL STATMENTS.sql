@@ -66,7 +66,7 @@ VALUES (21,'Amazon Fire TV 50"', 'Amazon Fire TV 50" Omni Series 4K UHD smart TV
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
--- categury Table
+-- category Table
 
 INSERT INTO `term_project`.`category` (`category_id`, `title`) 
 VALUES (1, 'Home climatization');
@@ -182,7 +182,7 @@ VALUES (11, 'Ustol', 'Baba', '4876 my creativity has gone here road', 'Baba@gmai
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
--- suplier   Table
+-- supplier   Table
 
 INSERT INTO `term_project`.`supplier` (`supplier_id`, `supplier_name`, `phone_no`, `address`) 
 VALUES (1, 'Deliverd world', '4587595200', '2 random road ');
@@ -241,7 +241,7 @@ VALUES (5, 'Nalxoi', 'Argethic');
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
--- dEPARTMENT   Table
+-- department   Table
 
 INSERT INTO `term_project`.`department` (`department_id`, `employee_id`, `department_name`) 
 VALUES (1, 1, 'sales');
@@ -385,7 +385,9 @@ VALUES (9, 9, 9, 'Cash', 'Paid');
 INSERT INTO `term_project`.`transaction` (`transaction_id`, `customer_id`, `order_id`, `type`, `status`) 
 VALUES (10, 9, 10, 'credit', 'Paid');
 
---item
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+-- Item Table
 
 INSERT INTO `term_project`.`item` (`item_id`, `product_id`, `brand _id`, `supplier _id`, `order _id`, `employee_id`, `sku`, `max_price_rentail`, `discount`, `price`, `quantity`, `qnty_sold`, `available`) 
 VALUES (1, 1, 1, 1, 1, 1, '97336616', 288, 5, 288, 1, 20, 80);
@@ -417,7 +419,9 @@ VALUES (9, 10, 9, 7, 9, 1, '94711773', 34.99, null, 34.99, 1, 1, 10);
 INSERT INTO `term_project`.`item` (`item_id`, `product_id`, `brand _id`, `supplier _id`, `order _id`, `employee_id`, `sku`, `max_price_rentail`, `discount`, `price`, `quantity`, `qnty_sold`, `available`) 
 VALUES (10, 2, 2, 3, 10, 1, '58068118', 20, null, 20, 1, 1, 50);
 
--- end
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+-- order_item  Table
 
 INSERT INTO `term_project`.`order_item` (`id`, `product_id`, `item_id`, `order_id`) 
 VALUES (3, 5, 3, 3);
