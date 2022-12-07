@@ -1,14 +1,15 @@
-.bg-home-img{
+.bg-home-img {
     width: 100%;
     height: 80%;
     background: url("../images/home.jpg") no-repeat;
-    background-size: cover; 
+    background-size: cover;
     filter: blur(5px);
     -webkit-filter: blur(5px);
     position: absolute;
     opacity: 60;
 }
-.home-description{
+
+.home-description {
     background-color: rgb(255, 255, 255, 0.7);
     padding: 0 50px;
     z-index: 1;
@@ -16,15 +17,18 @@
     min-height: 80%;
     position: relative;
 }
-.home-description h1{
+
+.home-description h1 {
     text-align: center;
     margin-bottom: 20px;
     text-transform: uppercase;
 }
-.home-description p{
+
+.home-description p {
     font-size: 1.1rem;
 }
-.home-content{
+
+.home-content {
     width: 100%;
     height: 100%;
     display: flex;
@@ -32,15 +36,22 @@
     align-items: center;
 }
 
+.home-description {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
 @media screen and (max-width: 1600px) {
-    .map-responsive{
-        overflow:hidden;
-        position:relative;
-        height:0;
-        left:0;
-        top:0;
-        height:100%;
-        width:100%;
+    .map-responsive {
+        overflow: hidden;
+        position: relative;
+        height: 0;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
     }
 }
 
@@ -48,19 +59,22 @@
     .home-description h1 {
         font-size: 1.3rem;
     }
+
     .home-description p {
         font-size: 0.85rem;
     }
 }
 
-  /* Galaxy fold */
-  @media screen and (max-width: 280px) {
-    .home-description{
+/* Galaxy fold */
+@media screen and (max-width: 280px) {
+    .home-description {
         padding: 10px 20px;
     }
+
     .home-description h1 {
         font-size: 1rem;
     }
+
     .home-description p {
         font-size: 0.75rem;
     }
