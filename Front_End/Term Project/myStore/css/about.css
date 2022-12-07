@@ -1,0 +1,19 @@
+#about-page-content{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 0 10px;
+}
+#about-page img{
+    width: 50%;
+}
+
+@media screen and (max-width: 600px) {
+    #about-page-content{
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
+    #about-page img{
+        width: 100%;
+    }
+}

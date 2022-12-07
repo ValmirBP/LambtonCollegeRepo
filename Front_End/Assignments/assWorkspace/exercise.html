@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice Exercise 29-42</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+
+            width: 100%;
+            height: 100vh;
+        }
+
+        header {
+            width: 100%;
+            height: 50%;
+        }
+
+        .header-content {
+            position: relative;
+            top: -50%;
+            width: 100%;
+
+        }
+
+        .bg-img-header {
+            width: 100%;
+            height: 100%;
+            background: url("maxresdefault.jpg") no-repeat;
+            background-size: cover;
+            position: relative;
+            opacity: 35%;
+        }
+
+        h1 {
+            top: 0;
+            width: 100%;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            text-transform: uppercase;
+            color: rgb(12, 112, 12);
+
+        }
+
+        main {
+            width: 100%;
+        }
+
+        h2 {
+            margin-bottom: 10px;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        .grid-container {
+            width: 100%;
+            padding: 3%;
+            position: relative;
+            display: grid;
+            grid-template-columns: 1fr 0.5fr;
+            grid-gap: 5%;
+            background-color: rgb(240, 255, 241);
+        }
+
+        .infosRio {
+            background-color: rgb(210, 228, 224);
+            padding: 3%;
+            text-align: justify;
+        }
+
+        ol {
+            background-color: rgb(210, 228, 224);
+            padding: 20px;
+        }
+
+        li {
+            padding: 5px;
+        }
+
+        #txtVideo {
+            text-decoration: underline;
+            margin-bottom: 15px;
+            font-weight: bold;
+            font-size: 2em;
+        }
+
+        #txtSound {
+            margin-bottom: 15px;
+            font-weight: bold;
+            font-size: 1em;
+        }
+
+        .multimedia {
+            width: 100%;
+            padding-left: 3%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 5%;
+            background-color: rgb(228, 225, 225)
+        }
+
+        .video {
+            margin-left: 20px;
+            padding: 10px;
+        }
+
+        audio,
+        #txtSound {
+            padding: 15px;
+            text-align: justify;
+            margin-left: 20px;
+            margin-top: 40px;
+            padding: 10px;
+        }
+
+        footer {
+            padding: 4%;
+            width: 100%;
+            text-align: center;
+            background-color: rgb(173, 196, 173);
+
+        }
+
+        span {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="bg-img-header"></div>
+        <div class="header-content">
+            <h1>A breath introduction of Rio de Janeiro</h1>
+        </div>
+    </header>
+
+    <main>
+        <div class="grid-container">
+            <div class="infosRio">
+                <h2>introduction</h2>
+                <p>
+                    Rio de Janeiro (informally referred to as Rio)is a Brazilian municipality, capital of the homonymous
+                    state, located in the Southeast of the country.
+                    Largest international tourist destination in Brazil, in Latin America and the entire Southern
+                    Hemisphere
+                    (in 2008), the capital of Rio de Janeiro is
+                    the best-known Brazilian city abroad, functioning as a "mirror", or national "portrait", either
+                    positively or negatively. It is the second largest
+                    metropolis in Brazil (after São Paulo), the sixth largest in America and the thirty-fifth in the
+                    world.
+                    Its population estimated by the IBGE for
+                    July 1, 2021 was 6,775,561 inhabitants. It has the epithet of Cidade Maravilhosa, and those born
+                    there
+                    are called cariocas.
+                </p>
+                <br>
+                <p>
+                    Classified as a metropolis, it exerts national influence, whether from the Brazilian cultural,
+                    economic
+                    or political point of view, and is one
+                    of the main economic, cultural and financial centers of the country, being internationally known for
+                    several cultural and landscape icons, such as the
+                    Sugarloaf Mountain, Corcovado Mountain with the statue of Christ the Redeemer, the beaches in the
+                    neighborhoods
+                    of Copacabana, Ipanema and Barra da Tijuca, among others; the Maracanã and Nilton Santos stadiums;
+                    the
+                    bohemian neighborhood of Lapa and its arches;
+                    the Municipal Theater of Rio de Janeiro; the forests of Tijuca and Pedra Branca; Quinta da Boa
+                    Vista;
+                    the National Library; the island of Paquetá;
+                    New Year's Eve in Copacabana; the carioca carnival; Bossa Nova and samba. Part of the city was
+                    designated a UNESCO World Heritage Site on July 1, 2012.
+                </p>
+                <br>
+            </div>
+            <div class="infosRio">
+                <h2>Quick facts</h2>
+
+                <ol>
+                    <li>Country: Brazil</li>
+                    <li>State: Rio de Janeiro</li>
+                    <li>Founded: March 1, 1565</li>
+                    <li>Founder: Estácio de Sá</li>
+                    <li>Population: 6.32 Million</li>
+                    <li>Size: 485 square miles</li>
+                    <li>Nicknames: Rio, Marvelous City</li>
+                    <li>Attractions: Copacabana, Ipanema, Christ the Redeemer Statue, Sambodromo</li>
+                    <li> Airports: Galeão–Antonio Carlos Jobim International Airport</li>
+                </ol>
+            </div>
+
+        </div>
+
+        <div class="multimedia">
+            <div class="video">
+                <p id="txtVideo"> Above you can see a video about Rio de Janeiro</p>
+                <video controls>
+                    <source src="videoplayback.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+            <div class="sound">
+                <p id="txtSound"> Listen one of the one of the most listened songs from rio de Janeiro according to <br>
+                    Spotify Morena Luan
+                    Santana Som Livre</p>
+                <audio controls>
+                    <source src="Luan Santana - MORENA.mp3" type="audio/ogg">
+                    Your browser does not support the audio element.
+                </audio>
+                <p id="txtSound"> Are you interested to visit Rio de Janeiro?
+                    <a href="https://www.skyscanner.ca/flights-to/br/cheap-flights-to-brazil.html?&utm_source=google&utm_medium=cpc&utm_campaign=CA-Flights-Search-EN-DSA&utm_term=DYNAMIC+SEARCH+ADS&associateID=SEM_GGF_19370_00017&gclid=CjwKCAiAp7GcBhA0EiwA9U0mtqf3KSoEyMCFi6FBo2UadS6YQNmmMeG-ZkWCYTYfAC9o8wztfvdY6BoCvE0QAvD_BwE&gclsrc=aw.ds"
+                        target="_blank"> <br> click here and buy your ticket now!</a>
+                </p>
+            </div>
+        </div>
+
+    </main>
+    <footer>
+        <p> <span> Student Name: </span> Valmir de Barros Pedro</p>
+        <p> <span>Student Number:</span> C0808675</p>
+        <p> <span>Course: </span> FSDT 2022F </p>
+        <p> <span> CSD 1103 Front End Web Development I</span></p>
+    </footer>
+
+</body>
+
+</html>
