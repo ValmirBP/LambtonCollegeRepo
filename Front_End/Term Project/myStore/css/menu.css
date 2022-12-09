@@ -23,6 +23,11 @@ li{
     background-color: #555;
     color: #fff;
 }
+#logo-link-h-page{
+    text-decoration: none;
+    color: #000;
+    
+}
 #menu-hamburger{
     display: none;
 }

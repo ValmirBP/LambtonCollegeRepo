@@ -3,9 +3,10 @@
     justify-content: center;
     gap: 20px;
     padding: 0 10px;
+    text-align: justify;
 }
 #about-page img{
-    width: 50%;
+    width: 40%;
 }
 
 @media screen and (max-width: 600px) {
