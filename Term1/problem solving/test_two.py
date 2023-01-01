@@ -10,7 +10,7 @@ CSD 1133 Problem Solving/Program Logic
 
 
 def SwapList():
-    aList = []
+    aList = []x
     n = int(input("Type here the number of the elements: "))
 
     for x in range(0, n):

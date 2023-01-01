@@ -1,11 +1,16 @@
-#content {
+.contact-content {
     display: flex;
     justify-content: center;
     gap: 20px;
     padding: 0 10px;
     text-align: justify;
 }
-
+.box{
+    min-width: 40%
+}
+.business-hour{
+    margin-bottom: 5px;
+}
 button {
     margin: 5px 0;
     padding: 3px;
@@ -19,7 +24,6 @@ button {
     font-size: 0.8rem;
     text-align: center;
 }
-
 
 span {
     color: red;
@@ -53,12 +57,36 @@ iframe {
     margin-right: 1%;
 }
 
-#info{
+#info {
     margin-top: 10px;
 }
+
 @media screen and (max-width: 600px) {
-    #about-page-content {
+    .contact-content {
         flex-direction: column;
         margin-bottom: 20px;
     }
+
+    /* #about-page-content {
+        flex-direction: column;
+        margin-bottom: 20px;
+    } */
+}
+
+.form {
+    width: 80%;
+    /*position: static; */
+}
+
+@media screen and (max-width: 600px) {
+    .form {
+        width: 110%;
+    }
+
+    footer {
+        position: relative;
+        width: 100%;
+        margin-top: 50%;
+    }
+
 }

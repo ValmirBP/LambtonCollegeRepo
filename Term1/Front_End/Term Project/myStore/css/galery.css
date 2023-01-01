@@ -6,6 +6,7 @@
 }
 .galery-content{
     overflow-x: auto;
+    flex-wrap: wrap;
 }
 .stars{
     padding: 0;
